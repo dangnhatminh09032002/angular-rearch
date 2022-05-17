@@ -1,0 +1,20 @@
+<h1>Coundown</h1>
+<h2>{{ result }}</h2>
+<input
+  min="0"
+  type="range"
+  [value]="result"
+  (mousemove)="result = getValue($event)"
+  [disabled]="starting"
+/>
+<button (click)="decrease()" [disabled]="starting">-</button>
+<button (click)="increment()" [disabled]="starting">+</button>
+<button
+  style="display: block; margin-top: 1rem"
+  (click)="start()"
+  [disabled]="starting"
+>
+  Start
+</button>
+<button style="display: block; margin-top: 1rem" (click)="stop()">Stop</button>
+<app-keyboard></app-keyboard>
